@@ -1,3 +1,5 @@
+package solution;
+
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -8,6 +10,8 @@ public class Solution4 {
         int[] arrayIn = new int[]{-10,3,9,-1,6,1,0};
         int[] result = positiveArray(arrayIn);
         Solution3.vewInt(result);
+
+
     }
     public static int[] positiveArray(int[] inArray)
     {
