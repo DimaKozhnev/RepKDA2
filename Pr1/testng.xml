@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="util tests" configfailurepolicy="continue" parallel="classes" thread-count="3">
+    <test name="unit test">
+        <groups>
+           <run>
+               <exclude name="group1"/>
+           </run> 
+        </groups>
+        <classes>
+             <class name="unit_test.TestSol1"/>
+                <class name="unit_test.TaskTest"/>
+        </classes>
+    </test>
+</suite>
+
+
+
+
