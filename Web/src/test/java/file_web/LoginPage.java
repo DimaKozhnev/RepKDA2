@@ -14,8 +14,10 @@ public class LoginPage {
     }
     @FindBy(xpath = "//*[contains(@id, 'passp-field-login')]")
     private WebElement loginField;
+   
 
-    @FindBy(xpath = "/html/body/div/div/div[2]/div[2]/div/div/div[2]/div[3]/div/div/div/div[1]/form/div[3]/button")
+
+    @FindBy(xpath = "//html/body/div[6]/div[1]/div[2]/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[2]/div/a/span/span")
     private WebElement loginBtn;
 
     public void clickLoginBtn(){

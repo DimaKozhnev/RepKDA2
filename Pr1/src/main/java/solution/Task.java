@@ -1,7 +1,7 @@
 package solution;
 
 public class Task {
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
 
 
         Task task = new Task();
@@ -24,8 +24,7 @@ public class Task {
         if (numbers % 5 == 0)
             result = result + "bar";
 
-        result = result.equals("")? String.valueOf(numbers):result;
-
+        result = result.equals("") ? String.valueOf(numbers) : result;
 
 
         System.out.println(result);

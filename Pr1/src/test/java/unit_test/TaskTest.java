@@ -3,6 +3,7 @@ package unit_test;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import solution.Task;
 
@@ -33,54 +34,24 @@ public class TaskTest {
         PrintStream printStream = new PrintStream(baos, true);
         System.setOut(printStream);
     }
-
-    //num 3 - 2
-    @Test
-    public void check1() {
-        baos.reset();
-        String expectedResult = "2";
-        test.printingTheWord(2);
-        System.out.flush();
-
-        String actualResult = baos.toString().substring(0,baos.toString().length()-2);
-
-        Assert.assertEquals(actualResult,expectedResult, "not corrected XXX");
-    }
-
-    //num 3 - «foo»
-    @Test
-    public void check2() {
-        baos.reset();
-        String expectedResult = "foo";
-        test.printingTheWord(3);
-        String actualResult = baos.toString().substring(0,baos.toString().length()-2);
-        Assert.assertEquals( actualResult,expectedResult, "not corrected XXX");
+    @DataProvider
+    public Object[][] date() {
+        return new Object[][]{
+                {1,"1"},
+                {3,"foo"},
+                {5,"bar"},
+                {15,"foobar"},};
 
     }
-
-    //num 5 - «bar»
-    @Test
-    public void check3() {
+    @Test( dataProvider = "date")
+    public void checkX(Integer locale, String expectedResult) {
         baos.reset();
-        String expectedResult = "bar";
-        test.printingTheWord(5);
-        String actualResult = baos.toString().substring(0,baos.toString().length()-2);
-        Assert.assertEquals(actualResult,expectedResult, "not corrected XXX");
-
+        test.printingTheWord(locale);
+        final String actualResult = baos.toString().substring(0,baos.toString().length()-2);
+        Assert.assertEquals(actualResult,expectedResult);
     }
 
-    //num = 15 -  «foobar»
-    @Test
-    public void check4() {
-        baos.reset();
-        String expectedResult = "foobar";
-        test.printingTheWord(15);
-        String actualResult = baos.toString().substring(0,baos.toString().length()-2);
-        Assert.assertEquals(actualResult,expectedResult, "not corrected XXX");
 
-    }
-
-    // -1
     @Test(expectedExceptions = IllegalArgumentException.class, description = "Check 1")
     public void check5() {
 

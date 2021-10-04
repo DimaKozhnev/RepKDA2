@@ -3,8 +3,13 @@
 <suite name="util tests" configfailurepolicy="continue" parallel="classes" thread-count="3">
     <test name="unit test">
         <groups>
-            
+           <run>
+               <exclude name="group1"></exclude>
+           </run> 
         </groups>
+        <classes>
+            <class name="unit_test.TestSol1"></class>
+        </classes>
     </test>
 </suite>
 
