@@ -19,6 +19,7 @@ public class TestSol1 extends BaseTest {
     @Test(dataProvider = "dataArruy", groups = "group1")
     public void testPreobr(DataTestS1 locale, int[] exceptid) {
         int[] actualResult = Solution1.preobr(locale.getArrayIn1(), locale.getArrayIn2());
+        System.out.println(actualResult);
         Assert.assertEquals(actualResult, exceptid);
 
     }

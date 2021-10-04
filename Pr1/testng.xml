@@ -8,7 +8,8 @@
            </run> 
         </groups>
         <classes>
-            <class name="unit_test.TestSol1"/>
+             <class name="unit_test.TestSol1"/>
+                <class name="unit_test.TaskTest"/>
         </classes>
     </test>
 </suite>

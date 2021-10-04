@@ -43,7 +43,7 @@ public class TaskTest {
                 {15,"foobar"},};
 
     }
-    @Test( dataProvider = "date")
+    @Test( dataProvider = "date",dependsOnGroups ="group1" )
     public void checkX(Integer locale, String expectedResult) {
         baos.reset();
         test.printingTheWord(locale);
